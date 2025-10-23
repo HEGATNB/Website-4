@@ -10,34 +10,54 @@
 </head>
 
 <body>
+     <div class="snow-container" id="snowContainer"></div>
     <div class="logo">
+        <img src="images/logo.png" class="logo_img" alt="Логотип">
         <h1 class="name">Рыбаков Михаил</h1>
-        <img src="images/logo.png" class="logo_img">
     </div>
+    
     <div class="buttons_container">
-        <button class="buttons" , href="main_page.html">Главная</button>
-        <button class="buttons" , href="projects.html">Проекты</button>
-        <button class="buttons" , href="diary.html">Дневник</button>
-        <button class="buttons" , href="contacts.html">Контакты</button>
+        <a href="main_page.html" class="button-link">
+            <button class="buttons">Главная</button>
+        </a>
+        <a href="projects.html" class="button-link">
+            <button class="buttons">Проекты</button>
+        </a>
+        <a href="diary.html" class="button-link">
+            <button class="buttons">Дневник</button>
+        </a>
+        <a href="contacts.html" class="button-link">
+            <button class="buttons">Контакты</button>
+        </a>
     </div>
-    <h1>Мой учебный прогресс</h1>
+    <h1 class = "process_title">Мой учебный прогресс</h1>
     <div class="events">
         <h2>15 дек - Верстка макета сайта</h2>
         <h2>10 дек - Основы js</h2>
         <h2>05 дек - Создание приложения связанного с бд</h2>
         <h2>01 дек - Разработка дизайна сайта</h2>
     </div>
+    <h1 class="courses_title">Текущие курсы</h1>
     <div class="courses">
-        <h2 class="list">Веб разработка</h2>
-        <h2 class="list">JavaScript</h2>
-        <h2 class="list">C++/C#</h2>
+        <div class="course">
+            <h2 class="list">Веб разработка</h2>
+            <progress value="60" max="100" class="skill_bar_diary">60%</progress>
+        </div>
+        <div class="course">
+            <h2 class="list">JavaScript</h2>
+            <progress value="45" max="100" class="skill_bar_diary">45%</progress>
+        </div>
+        <div class="course">
+            <h2 class="list">C++/C#</h2>
+            <progress value="75" max="100" class="skill_bar_diary">75%</progress>
+        </div>
     </div>
-    <footer class="footer">
+     <footer class="footer">
         <div class="container">
-            <p class="footer__copyright">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p class="footer__copyright">&copy; 2023 Рыбаков Михаил. Все права защищены.</p>
             <p class="footer__contact">Телефон: +7 (123) 456-78-90</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
-
 </html>

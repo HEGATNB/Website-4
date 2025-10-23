@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,61 +9,80 @@
 </head>
 
 <body>
+    <div class="snow-container" id="snowContainer"></div>
     <div class="logo">
-        <img src="images/logo.png" class="logo_img">
+        <img src="images/logo.png" class="logo_img" alt="Логотип">
         <h1 class="name">Рыбаков Михаил</h1>
     </div>
+    
     <div class="buttons_container">
-        <button class="buttons" , href="main_page.html">Главная</button>
-        <button class="buttons" , href="projects.html">Проекты</button>
-        <button class="buttons" , href="diary.html">Дневник</button>
-        <button class="buttons" , href="contacts.html">Контакты</button>
+        <a href="main_page.html" class="button-link">
+            <button class="buttons">Главная</button>
+        </a>
+        <a href="projects.html" class="button-link">
+            <button class="buttons">Проекты</button>
+        </a>
+        <a href="diary.html" class="button-link">
+            <button class="buttons">Дневник</button>
+        </a>
+        <a href="contacts.html" class="button-link">
+            <button class="buttons">Контакты</button>
+        </a>
     </div>
+    
     <div class="info">
-        <img class="my_photo" , src="images/avatar.jpeg">
-        <h2 class="right-text">Привет! Я студент группы ЭФБО-12-24 Увлекаюсь веб разработкой</h2>
-        <button class="download">скачать резюме</button>
+        <img class="my_photo" src="images/avatar.jpeg" alt="Мое фото">
+            <div class="text-content">
+                <h2 class="right-text">Привет! Я студент <br> группы ЭФБО-12-24 <br> Увлекаюсь веб разработкой</h2>
+            <button class="download">Скачать резюме</button>
+        </div>
     </div>
+    
+    <h2 class="skills_title">Мои навыки</h2>
     <div class="my_skills">
         <div class="skill">
-            <h2>HTML/CSS</h2 class="skill_text">
+            <h2 class="skill_name">HTML/CSS</h2>
             <progress value="60" max="100" class="skill_bar">60%</progress>
         </div>
         <div class="skill">
-            <h2>JavaScript</h2 class="skill_text"><progress value="45" max="100" class="skill_bar">45%</progress>
+            <h2 class="skill_name">JavaScript</h2>
+            <progress value="45" max="100" class="skill_bar">45%</progress>
         </div>
         <div class="skill">
-            <h2>C#</h2 class="skill_text">
+            <h2 class="skill_name">C#</h2>
             <progress value="35" max="100" class="skill_bar">35%</progress>
         </div>
         <div class="skill">
-            <h2>Python</h2 class="skill_text">
+            <h2 class="skill_name">Python</h2>
             <progress value="70" max="100" class="skill_bar">70%</progress>
         </div>
     </div>
+    <h1 class="projects_title">Лучшие проекты</h1>
     <div class="my_projects">
-        <a href="https://github.com/HEGATNB/HiddenProject_FABD"></a>
-        <div class="projects">
-            <h2>Сайт</h2>
-        </div>
+        <a href="https://github.com/HEGATNB/HiddenProject_FABD" class="project-link">
+            <div class="project">
+                <h2>Сайт</h2>
+            </div>
         </a>
-        <a href="https://github.com/HEGATNB/Calculator-c"></a>
-        <div class="projects">
-            <h2>Калькулятор на c#</h2>
-        </div>
+        <a href="https://github.com/HEGATNB/Calculator-c" class="project-link">
+            <div class="project">
+                <h2>Калькулятор на C#</h2>
+            </div>
         </a>
-        <a href="https://github.com/HEGATNB/MINESWEEPER">
-            <div class="projects">
-                <h2>Сапер с графическим интерфесом</h2>
+        <a href="https://github.com/HEGATNB/MINESWEEPER" class="project-link">
+            <div class="project">
+                <h2>Сапер с графическим интерфейсом</h2>
             </div>
         </a>
     </div>
+    
     <footer class="footer">
         <div class="container">
-            <p class="footer__copyright">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p class="footer__copyright">&copy; 2023 Рыбаков Михаил. Все права защищены.</p>
             <p class="footer__contact">Телефон: +7 (123) 456-78-90</p>
         </div>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>

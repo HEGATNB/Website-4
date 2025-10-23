@@ -1,46 +1,64 @@
-<!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
-    <meta name="description" content="Основная информация о сайте">
+    <title>Контакты</title>
+    <meta name="description" content="Контактная информация">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
+  <div class="snow-container" id="snowContainer"></div>
     <div class="logo">
+        <img src="images/logo.png" class="logo_img" alt="Логотип">
         <h1 class="name">Рыбаков Михаил</h1>
-        <img src="images/logo.png" class="logo_img">
     </div>
+    
     <div class="buttons_container">
-        <button class="buttons" , href="main_page.html">Главная</button>
-        <button class="buttons" , href="projects.html">Проекты</button>
-        <button class="buttons" , href="diary.html">Дневник</button>
-        <button class="buttons" , href="contacts.html">Контакты</button>
+        <a href="main_page.html" class="button-link">
+            <button class="buttons">Главная</button>
+        </a>
+        <a href="projects.html" class="button-link">
+            <button class="buttons">Проекты</button>
+        </a>
+        <a href="diary.html" class="button-link">
+            <button class="buttons">Дневник</button>
+        </a>
+        <a href="contacts.html" class="button-link">
+            <button class="buttons">Контакты</button>
+        </a>
     </div>
-    <div class="message">
-        <h2>Имя:</h2>
-        <input type="text" name="username" placeholder="Введите имя">
-        <h2>Email:</h2>
-        <input type="text" name="useremale" placeholder="Введите имя">
-        <h2>Сообщение:</h2>
-        <form>
-            <textarea name="message" rows="4" cols="50" placeholder="Введите ваше сообщение"></textarea>
-        </form>
+    
+    <div class="contact-container">
+        <div class="message">
+            <div class="form-group">
+                <label class="form-label">Имя:</label>
+                <input type="text" class="form-input username" placeholder="Введите имя">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email:</label>
+                <input type="email" class="form-input usermail" placeholder="Введите email">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Сообщение:</label>
+                <textarea class="form-input message-input userinput" placeholder="Введите ваше сообщение"></textarea>
+            </div>
+        </div>
     </div>
+    <h1 class="contacts_text">Контакты</h1>
     <div class="cont_info">
         <h2>student.edu.ru</h2>
         <h2>Github: hegatnb</h2>
         <h2>Россия, Королев</h2>
     </div>
+    
     <footer class="footer">
         <div class="container">
-            <p class="footer__copyright">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p class="footer__copyright">&copy; 2023 Рыбаков Михаил. Все права защищены.</p>
             <p class="footer__contact">Телефон: +7 (123) 456-78-90</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
-
 </html>

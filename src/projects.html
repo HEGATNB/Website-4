@@ -10,41 +10,53 @@
 </head>
 
 <body>
+      <div class="snow-container" id="snowContainer"></div>
     <div class="logo">
+        <img src="images/logo.png" class="logo_img" alt="Логотип">
         <h1 class="name">Рыбаков Михаил</h1>
-        <img src="images/logo.png" class="logo_img">
     </div>
+    
     <div class="buttons_container">
-        <button class="buttons" , href="main_page.html">Главная</button>
-        <button class="buttons" , href="projects.html">Проекты</button>
-        <button class="buttons" , href="diary.html">Дневник</button>
-        <button class="buttons" , href="contacts.html">Контакты</button>
+        <a href="main_page.html" class="button-link">
+            <button class="buttons">Главная</button>
+        </a>
+        <a href="projects.html" class="button-link">
+            <button class="buttons">Проекты</button>
+        </a>
+        <a href="diary.html" class="button-link">
+            <button class="buttons">Дневник</button>
+        </a>
+        <a href="contacts.html" class="button-link">
+            <button class="buttons">Контакты</button>
+        </a>
+    </div>
+    <h2 class="projects_title">Мои проекты</h2>
+    <div class ="filters">
+        <button class="buttons_projects">Все</button>
+        <button class="buttons_projects">HTML</button>
+        <button class="buttons_projects">C++</button>
+        <button class="buttons_projects">JS</button>
     </div>
     <div class="my_projects">
-        <h2>Мои проекты</h2>
         <div class="projects">
-            <h2>Личный сайт</h2>
-            <h2>HTML,CSS,JS</h2>
+            <h2>Личный сайт <br> HTML,CSS,JS</h2>
         </div>
         <div class="projects">
-            <h2>Калькулятор</h2>
-            <h2>C++</h2>
+            <h2>Калькулятор <br> C++</h2>
         </div>
         <div class="projects">
-            <h2>Игра</h2>
-            <h2>C#</h2>
+            <h2>Игра <br> C#</h2>
         </div>
         <div class="projects">
-            <h2>Портфолио</h2>
-            <h2>HTML,CSS,JS</h2>
+            <h2>Портфолио <br> HTML,CSS,JS</h2>
         </div>
     </div>
-    <footer class="footer">
+       <footer class="footer">
         <div class="container">
-            <p class="footer__copyright">&copy; 2023 Название вашего сайта. Все права защищены.</p>
+            <p class="footer__copyright">&copy; 2023 Рыбаков Михаил. Все права защищены.</p>
             <p class="footer__contact">Телефон: +7 (123) 456-78-90</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
-
 </html>
