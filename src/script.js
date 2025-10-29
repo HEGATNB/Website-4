@@ -34,3 +34,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+let block1 = document.getElementById("project1");
+let block2 = document.getElementById("project2");
+let block3 = document.getElementById("project3");
+let block4 = document.getElementById("project4");
+function hideElement(block){
+    switch (block){
+        case 1: // Все
+            block1.hidden = false;
+            block2.hidden = false;
+            block3.hidden = false;
+            block4.hidden = false;
+            break;
+        case 2: // HTML
+            block1.hidden = false; // Личный сайт - HTML
+            block2.hidden = true;  // Калькулятор - C++
+            block3.hidden = true;  // Игра - C#
+            block4.hidden = false; // Портфолио - HTML
+            break;
+        case 3: // C++
+            block1.hidden = true;  // Личный сайт - HTML
+            block2.hidden = false; // Калькулятор - C++
+            block3.hidden = true;  // Игра - C#
+            block4.hidden = true;  // Портфолио - HTML
+            break;
+        case 4: // JS
+            block1.hidden = false; // Личный сайт - JS
+            block2.hidden = true;  // Калькулятор - C++
+            block3.hidden = true;  // Игра - C#
+            block4.hidden = false; // Портфолио - JS
+            break;
+    }
+}
