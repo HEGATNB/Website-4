@@ -2,11 +2,16 @@
     box-sizing: border-box;
 }
 
+*root{
+    --shadow-color :rgba(0,0,0,0.3);
+    --main-color: #2c3e50;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #1a2a3a 0%, main-color 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,7 +40,7 @@ body {
 
 .cont_info h2 {
     margin: 10px 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px --shadow-color;
 }
 
 .form-group {
@@ -50,7 +55,7 @@ body {
     text-align: left;
     margin-right: 20px;
     font-size: 18px;
-    color: #2c3e50;
+    color: main-color;
     font-weight: bold;
     padding-top: 10px;
     flex-shrink: 0;
@@ -130,7 +135,7 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px --shadow-color;
 }
 
 .buttons_container {
@@ -151,7 +156,7 @@ body {
     font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgba(255,255,255,0.9);
-    color: #2c3e50;
+    color: main-color;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -165,7 +170,7 @@ body {
 .buttons_projects:hover{
     background-color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px --shadow-color;
 }
 
 .buttons {
@@ -175,7 +180,7 @@ body {
     font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgba(255,255,255,0.9);
-    color: #2c3e50;
+    color: main-color;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -188,7 +193,7 @@ body {
 .buttons:hover {
     background-color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px --shadow-color;
 }
 
 .info {
@@ -220,7 +225,7 @@ body {
     color: white;
     line-height: 1.4;
     text-align: left;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px --shadow-color;
 }
 
 .download {
@@ -230,7 +235,7 @@ body {
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgba(255,255,255,0.9);
-    color: #2c3e50;
+    color: main-color;
     border: none;
     cursor: pointer;
     margin: 20px 0;
@@ -244,7 +249,7 @@ body {
 .download:hover {
     background-color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px --shadow-color;
 }
 
 title.skills_, skills_title {
@@ -253,7 +258,7 @@ title.skills_, skills_title {
     margin: 30px 0;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px --shadow-color;
 }
 
 .my_skills, .courses {
@@ -284,7 +289,7 @@ title.skills_, skills_title {
     margin: 0;
     font-size: 24px;
     width: 150px;
-    color: #2c3e50;
+    color: main-color;
 }
 
 .skill_bar, .skill_bar_diary {
@@ -313,11 +318,12 @@ title.skills_, skills_title {
 .my_projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between; 
     width: 80%;
     max-width: 800px;
     margin: 50px auto;
+    min-height: 400px;
+    gap: 20px;
 }
 
 
@@ -351,7 +357,7 @@ title.skills_, skills_title {
 .project h2 {
     margin: 0;
     font-size: 18px;
-    color: #2c3e50;
+    color: main-color;
 }
 
 .footer {
@@ -380,7 +386,7 @@ title.skills_, skills_title {
     margin: 30px 0;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px --shadow-color;
 }
 
 .my_projects{
@@ -389,7 +395,7 @@ title.skills_, skills_title {
 }
 
 .projects {
-    width: 350px;
+      width: 350px;
     height: 150px;
     background-color: white;
     border-radius: 25px;
@@ -398,7 +404,12 @@ title.skills_, skills_title {
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    flex-shrink: 0; 
+    margin: 0; 
 }
 
 .filters{
@@ -413,7 +424,7 @@ title.skills_, skills_title {
 .projects h2 {
     margin: 0;
     font-size: 20px;
-    color: #2c3e50;
+    color: main-color;
     line-height: 1.4;
 }
 
@@ -476,7 +487,7 @@ title.skills_, skills_title {
     height: 35px;
     font-size: 15px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color:#2c3e50;
+    background-color:main-color;
     color: rgba(255,255,255,0.9);
     border: none;
     cursor: pointer;
@@ -487,6 +498,14 @@ title.skills_, skills_title {
 
 .send_button:hover{
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    background-color:#2c3e50;
+    box-shadow: 0 8px 20px --shadow-color;
+    background-color:main-color;
+}
+
+.projects[hidden] {
+     opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    pointer-events: none;
+    height: 150px; 
 }
