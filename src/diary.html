@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <meta name="description" content="Основная информация о сайте">
@@ -10,32 +12,61 @@
 </head>
 
 <body>
-     <div class="snow-container" id="snowContainer"></div>
+    <div class ="container-fluid p-0">
+    <div class="snow-container" id="snowContainer"></div>
     <div class="logo">
         <img src="images/logo.png" class="logo_img" alt="Логотип">
         <h1 class="name">Рыбаков Михаил</h1>
     </div>
-    
-    <div class="buttons_container">
-        <a href="main_page.html" class="button-link">
-            <button class="buttons">Главная</button>
-        </a>
-        <a href="projects.html" class="button-link">
-            <button class="buttons">Проекты</button>
-        </a>
-        <a href="diary.html" class="button-link">
-            <button class="buttons">Дневник</button>
-        </a>
-        <a href="contacts.html" class="button-link">
-            <button class="buttons">Контакты</button>
-        </a>
-    </div>
-    <h1 class = "process_title">Мой учебный прогресс</h1>
+      <nav class ="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="main_page.html" class="button-link" >
+                            <i class="bi bi-house me-1"></i>Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="button-link">
+                            <i class="bi bi-hammer me-1"></i>Проекты
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="diary.html" class="button-link">
+                            <i class="bi bi-journal-text me-1"></i>Дневник
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contacts.html" class="button-link">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     <h1 class = "process_title">Мой учебный прогресс</h1>
     <div class="events">
-        <h2>15 дек - Верстка макета сайта</h2>
-        <h2>10 дек - Основы js</h2>
-        <h2>05 дек - Создание приложения связанного с бд</h2>
-        <h2>01 дек - Разработка дизайна сайта</h2>
+        <div class="event-item d-flex justify-content-between align-items-center">
+            <h2 class="mb-5">15 дек - Верстка макета сайта</h2>
+            <p class="mb-5 fs-5">✅</p>
+        </div>
+        <div class="event-item d-flex justify-content-between align-items-center">
+            <h2 class="mb-5">10 дек - Основы js</h2>
+            <p class="mb-5 fs-5">✅</p>
+        </div>
+        <div class="event-item d-flex justify-content-between align-items-center">
+            <h2 class="mb-5">05 дек - Создание приложения связанного с бд</h2>
+            <p class="mb-5 fs-5">(in progress)</p>
+        </div>
+        <div class="event-item d-flex justify-content-between align-items-center">
+            <h2 class="mb-5">01 дек - Разработка дизайна сайта</h2>
+            <p class="mb-5 fs-5">(in progress)</p>
+        </div>
     </div>
     <h1 class="courses_title">Текущие курсы</h1>
     <div class="courses">
@@ -52,12 +83,21 @@
             <progress value="75" max="100" class="skill_bar_diary">75%</progress>
         </div>
     </div>
-     <footer class="footer">
-        <div class="container">
-            <p class="footer__copyright">&copy; 2023 Рыбаков Михаил. Все права защищены.</p>
-            <p class="footer__contact">Телефон: +7 (123) 456-78-90</p>
-        </div>
-    </footer>
+      <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Рыбаков Михаил. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</div>
 </body>
 </html>
