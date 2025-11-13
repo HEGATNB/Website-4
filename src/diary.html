@@ -1,89 +1,124 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
-    <meta name="description" content="Основная информация о сайте">
+    <title>Дневник - Рыбаков Михаил</title>
+    <meta name="description" content="Учебный дневник и прогресс Рыбакова Михаила">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
-    <div class ="container-fluid p-0">
-    <div class="snow-container" id="snowContainer"></div>
-    <div class="logo">
-        <img src="images/logo.png" class="logo_img" alt="Логотип">
-        <h1 class="name">Рыбаков Михаил</h1>
-    </div>
-      <nav class ="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="main_page.html" class="button-link" >
-                            <i class="bi bi-house me-1"></i>Главная
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="projects.html" class="button-link">
-                            <i class="bi bi-hammer me-1"></i>Проекты
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="diary.html" class="button-link">
-                            <i class="bi bi-journal-text me-1"></i>Дневник
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contacts.html" class="button-link">
-                            <i class="bi bi-telephone me-1"></i>Контакты
-                        </a>
-                    </li>
-                </ul>
+    <div class="container-fluid p-0">
+        <div class="snow-container" id="snowContainer"></div>
+        
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo.png" class="logo_img" alt="Логотип Рыбаков Михаил">
+                <h1 class="name">Рыбаков Михаил</h1>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a href="main_page.html" class="nav-link button-link">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="projects.html" class="nav-link button-link">
+                                <i class="bi bi-hammer me-1"></i>Проекты
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="diary.html" class="nav-link button-link">
+                                <i class="bi bi-journal-text me-1"></i>Дневник
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contacts.html" class="nav-link button-link">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main">
+            <h1 class="process_title">Мой учебный прогресс</h1>
+
+            <div class="container text-center mb-4">
+                <button class="btn btn-primary add-event-btn" data-bs-toggle="modal" data-bs-target="#addEventModal">
+                    <i class="bi bi-plus-circle me-2"></i>Добавить учебный процесс
+                </button>
+            </div>
+            <div class="events-container">
+                <div class="events" id="eventsList">
+                </div>
+            </div>
+
+            <h1 class="courses_title">Текущие курсы</h1>
+            <div class="courses">
+                <div class="course">
+                    <h2 class="list">Веб разработка</h2>
+                    <progress value="60" max="100" class="skill_bar_diary">60%</progress>
+                </div>
+                <div class="course">
+                    <h2 class="list">JavaScript</h2>
+                    <progress value="45" max="100" class="skill_bar_diary">45%</progress>
+                </div>
+                <div class="course">
+                    <h2 class="list">C++/C#</h2>
+                    <progress value="75" max="100" class="skill_bar_diary">75%</progress>
+                </div>
+            </div>
+        </main>
+        <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addEventModalLabel">Добавить учебный процесс</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addEventForm">
+                            <div class="mb-3">
+                                <label for="eventDate" class="form-label">Дата (формат: ДД.ММ.ГГГГ)</label>
+                                <input type="text" class="form-control" id="eventDate" placeholder="12.12.2024" required>
+                                <div class="form-text">Например: 15.12.2024</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventText" class="form-label">Описание</label>
+                                <textarea class="form-control" id="eventText" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventStatus" class="form-label">Статус</label>
+                                <select class="form-select" id="eventStatus" required>
+                                    <option value="completed">✅ Выполнено</option>
+                                    <option value="inprogress">🔄 В процессе</option>
+                                    <option value="planned">📅 Запланировано</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="button" class="btn btn-primary" id="saveEventBtn">Сохранить</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-     <h1 class = "process_title">Мой учебный прогресс</h1>
-    <div class="events">
-        <div class="event-item d-flex justify-content-between align-items-center">
-            <h2 class="mb-5">15 дек - Верстка макета сайта</h2>
-            <p class="mb-5 fs-5">✅</p>
-        </div>
-        <div class="event-item d-flex justify-content-between align-items-center">
-            <h2 class="mb-5">10 дек - Основы js</h2>
-            <p class="mb-5 fs-5">✅</p>
-        </div>
-        <div class="event-item d-flex justify-content-between align-items-center">
-            <h2 class="mb-5">05 дек - Создание приложения связанного с бд</h2>
-            <p class="mb-5 fs-5">(in progress)</p>
-        </div>
-        <div class="event-item d-flex justify-content-between align-items-center">
-            <h2 class="mb-5">01 дек - Разработка дизайна сайта</h2>
-            <p class="mb-5 fs-5">(in progress)</p>
-        </div>
-    </div>
-    <h1 class="courses_title">Текущие курсы</h1>
-    <div class="courses">
-        <div class="course">
-            <h2 class="list">Веб разработка</h2>
-            <progress value="60" max="100" class="skill_bar_diary">60%</progress>
-        </div>
-        <div class="course">
-            <h2 class="list">JavaScript</h2>
-            <progress value="45" max="100" class="skill_bar_diary">45%</progress>
-        </div>
-        <div class="course">
-            <h2 class="list">C++/C#</h2>
-            <progress value="75" max="100" class="skill_bar_diary">75%</progress>
-        </div>
-    </div>
-      <footer class="bg-dark text-white py-4 mt-5">
+        <footer class="bg-dark text-white py-4 mt-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -96,8 +131,9 @@
                 </div>
             </div>
         </footer>
+    </div>
+
     <script src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
