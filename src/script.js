@@ -68,7 +68,6 @@ const projectsData = {
         link: "https://github.com/HEGATNB/MINESWEEPER"
     }
 };
-
 function openProjectModal(projectId) {
     const project = projectsData[projectId];
     if (!project) return;
@@ -83,12 +82,29 @@ function openProjectModal(projectId) {
     modalTitle.textContent = project.title;
     modalDescription.textContent = project.description;
     modalLink.href = project.link;
+
+    const isMobile = window.innerWidth <= 768;
+    const imageSuffix = isMobile ? '-mobile' : '-desktop';
     modalImg1.src = project.images[0];
     modalImg2.src = project.images[1];
-    modalImg1.alt = `Изображение проекта ${project.title} 1`;
-    modalImg2.alt = `Изображение проекта ${project.title} 2`;
+    modalImg1.alt = `Изображение проекта "${project.title}" - вид 1`;
+    modalImg2.alt = `Изображение проекта "${project.title}" - вид 2`;
+    modalImg1.loading = "lazy";
+    modalImg2.loading = "lazy";
 
     modal.show();
+    const handleModalResize = () => {
+        const currentIsMobile = window.innerWidth <= 768;
+        if (currentIsMobile !== isMobile) {
+            modalImg1.src = project.images[0];
+            modalImg2.src = project.images[1];
+        }
+    };
+    
+    window.addEventListener('resize', handleModalResize);
+    modal._element.addEventListener('hidden.bs.modal', () => {
+        window.removeEventListener('resize', handleModalResize);
+    });
 }
 
 let events = [];
@@ -296,3 +312,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function initLazyLoading() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy-load');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    } else {
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    }
+}
+
+function handleOrientationChange() {
+    const snowContainer = document.getElementById('snowContainer');
+    if (snowContainer) {
+        snowContainer.innerHTML = '';
+        createSnowflakes();
+    }
+    enhanceProgressBars();
+}
